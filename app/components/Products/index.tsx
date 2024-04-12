@@ -30,8 +30,16 @@ const workdata: workdata[] = [
 
 ]
 
-const Tweet = ({ name, position, text, photoLink, tweetLink }) => {
-    return (
+interface TweetProps {
+  name: string;
+  position: string;
+  text: string;
+  photoLink: string;
+  tweetLink: string;
+}
+
+const Tweet: React.FC<TweetProps> = ({ name, position, text, photoLink, tweetLink }) => {
+  return (
       <div className="relative group">
         <div className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-[#5b585f] to-[#2d2a33] blur duration-400 group-hover:opacity-100 group-hover:duration-200" />
         <a href={tweetLink} className="cursor-pointer">
